@@ -19,8 +19,8 @@ MAX_CHARS = 140
 
 def output_dir():
     """Resolve the output directory: $MAKEFUN_OUTPUT_DIR, else /output."""
-    configured = os.environ.get(OUTPUT_DIR_ENV, "").strip()
-    return configured or DEFAULT_OUTPUT_DIR
+    configured = os.environ.get(OUTPUT_DIR_ENV)
+    return configured if configured else DEFAULT_OUTPUT_DIR
 
 
 def validate(line):
